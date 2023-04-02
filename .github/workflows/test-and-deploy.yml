@@ -56,12 +56,10 @@ jobs:
       with:
         aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY }}
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        aws-region: us-west-2 
+        aws-region: eu-west-2 
 
-    - name: Provision AWS Free Tier
-      uses: hashicorp/setup-terraform@v1
-      with:
-        version: '2.0.3'
+    - name: Setup Terraform CLI
+      uses: hashicorp/setup-terraform@v2.0.2
 
     - name: Terraform init, plan and apply
       run: | 
